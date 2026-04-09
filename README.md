@@ -16,7 +16,7 @@ A premium, high-fidelity website for Overtime, a Roblox development studio speci
 
 You can deploy this website to Vercel with one click:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fvercel%2Ftree%2Fmain%2Fexamples%2Fvite)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLukePamlerr%2Fwenai)
 
 > **Note**: To make the "Deploy to Vercel" button work with your own repository, replace the `repository-url` in the link above with your GitHub repository URL.
 
