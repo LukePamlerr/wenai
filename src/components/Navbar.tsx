@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '../lib/utils';
 import { Box } from 'lucide-react';
@@ -14,17 +13,13 @@ export default function Navbar() {
   const location = useLocation();
 
   return (
-    <motion.nav 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center p-6 pointer-events-none"
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center p-6 pointer-events-none">
       <div className="flex items-center gap-8 px-6 py-3 rounded-full glossy border border-white/10 bg-black/70 backdrop-blur-xl pointer-events-auto shadow-sm">
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="p-1.5 rounded-lg bg-brand-grey-dark text-brand-white group-hover:scale-110 transition-transform">
+          <div className="p-1.5 rounded-lg bg-brand-white text-brand-black group-hover:scale-110 transition-transform">
             <Box size={18} />
           </div>
-          <span className="font-bold tracking-tight text-brand-grey-dark">Overtime</span>
+          <span className="font-bold tracking-tight text-brand-white">Overtime</span>
         </Link>
         
         <div className="h-4 w-[1px] bg-brand-grey/20" />
@@ -35,9 +30,9 @@ export default function Navbar() {
               key={item.path}
               to={item.path}
               className={cn(
-                "px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 hover:text-brand-grey-dark",
+                "px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 hover:text-brand-white",
                 location.pathname === item.path 
-                  ? "bg-brand-grey-dark text-brand-white shadow-md" 
+                  ? "bg-brand-white text-brand-black shadow-md" 
                   : "text-brand-grey hover:bg-brand-grey-light"
               )}
             >
@@ -46,6 +41,6 @@ export default function Navbar() {
           ))}
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 }

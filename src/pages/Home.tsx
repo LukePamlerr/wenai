@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { ArrowRight, Code, Layout, Sparkles, Loader2, Users } from 'lucide-react';
 import GlossyButton from '../components/GlossyButton';
 import { Link } from 'react-router-dom';
@@ -36,23 +35,13 @@ export default function Home() {
     <div className="pt-24">
       {/* Hero Section */}
       <section className="min-h-[90vh] flex flex-col items-center justify-center px-6 text-center overflow-hidden relative">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl z-10"
-        >
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-grey-light border border-brand-grey/10 text-brand-grey text-sm font-medium mb-8"
-          >
-            <Sparkles size={14} className="text-brand-grey-dark" />
+        <div className="max-w-4xl z-10">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-grey-light border border-brand-grey/10 text-brand-grey text-sm font-medium mb-8">
+            <Sparkles size={14} className="text-brand-white" />
             <span>Redefining Roblox Development</span>
-          </motion.div>
+          </div>
           
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-brand-grey-dark mb-8 leading-[0.9]">
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-brand-white mb-8 leading-[0.9]">
             We build the <span className="text-brand-grey">future</span> of immersive play.
           </h1>
           
@@ -67,11 +56,11 @@ export default function Home() {
                 <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </GlossyButton>
             </Link>
-            <Link to="/contact" className="text-brand-grey-dark font-semibold hover:text-brand-grey transition-colors">
+            <Link to="/contact" className="text-brand-white font-semibold hover:text-brand-grey transition-colors">
               Start a Project
             </Link>
           </div>
-        </motion.div>
+        </div>
         
         {/* Background Elements */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-0 opacity-30 pointer-events-none">
@@ -84,52 +73,35 @@ export default function Home() {
       <section className="py-32 px-6 bg-brand-grey-light/50">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <motion.div 
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 20 }}
-              viewport={{ once: true }}
-              className="p-8 rounded-3xl bg-brand-grey-light border border-brand-grey/10 shadow-sm hover:shadow-xl transition-all duration-500 group"
-            >
-              <div className="w-12 h-12 rounded-2xl bg-brand-grey-dark text-brand-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="p-8 rounded-3xl bg-brand-grey-light border border-brand-grey/10 shadow-sm hover:shadow-xl transition-all duration-500 group">
+              <div className="w-12 h-12 rounded-2xl bg-brand-white text-brand-black flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Layout size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-brand-grey-dark mb-4">Environment Design</h3>
+              <h3 className="text-2xl font-bold text-brand-white mb-4">Environment Design</h3>
               <p className="text-brand-grey leading-relaxed">
                 From hyper-realistic cities to fantastical realms, we push the limits of Roblox lighting and terrain.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div 
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 20 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="p-8 rounded-3xl bg-brand-grey-light border border-brand-grey/10 shadow-sm hover:shadow-xl transition-all duration-500 group"
-            >
-              <div className="w-12 h-12 rounded-2xl bg-brand-grey-dark text-brand-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="p-8 rounded-3xl bg-brand-grey-light border border-brand-grey/10 shadow-sm hover:shadow-xl transition-all duration-500 group">
+              <div className="w-12 h-12 rounded-2xl bg-brand-white text-brand-black flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Code size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-brand-grey-dark mb-4">Advanced Scripting</h3>
+              <h3 className="text-2xl font-bold text-brand-white mb-4">Advanced Scripting</h3>
               <p className="text-brand-grey leading-relaxed">
                 Custom engines, complex UI systems, and optimized backend logic built for performance and scale.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div 
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 20 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="p-8 rounded-3xl bg-brand-grey-light border border-brand-grey/10 shadow-sm hover:shadow-xl transition-all duration-500 group"
-            >
-              <div className="w-12 h-12 rounded-2xl bg-brand-grey-dark text-brand-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="p-8 rounded-3xl bg-brand-grey-light border border-brand-grey/10 shadow-sm hover:shadow-xl transition-all duration-500 group">
+              <div className="w-12 h-12 rounded-2xl bg-brand-white text-brand-black flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Sparkles size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-brand-grey-dark mb-4">Game Direction</h3>
+              <h3 className="text-2xl font-bold text-brand-white mb-4">Game Direction</h3>
               <p className="text-brand-grey leading-relaxed">
                 We don't just build; we craft experiences. Full-cycle game production from concept to monetization.
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -137,12 +109,7 @@ export default function Home() {
       {/* Live Stats Section */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {stats.loading ? (
               <div className="col-span-full h-48 bg-brand-grey-light/30 rounded-[2.5rem] flex items-center justify-center">
                 <Loader2 className="animate-spin text-brand-grey" size={32} />
@@ -153,7 +120,7 @@ export default function Home() {
                   <div className="w-16 h-16 rounded-2xl bg-green-900/30 text-green-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <Users size={32} />
                   </div>
-                  <div className="text-5xl font-bold text-brand-grey-dark mb-2">
+                  <div className="text-5xl font-bold text-brand-white mb-2">
                     {stats.playing.toLocaleString()}
                   </div>
                   <div className="text-brand-grey font-bold uppercase tracking-widest text-sm">Live Players</div>
@@ -164,7 +131,7 @@ export default function Home() {
                   <div className="w-16 h-16 rounded-2xl bg-blue-900/30 text-blue-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <Sparkles size={32} />
                   </div>
-                  <div className="text-5xl font-bold text-brand-grey-dark mb-2">
+                  <div className="text-5xl font-bold text-brand-white mb-2">
                     {stats.visits.toLocaleString()}
                   </div>
                   <div className="text-brand-grey font-bold uppercase tracking-widest text-sm">Total Visits</div>
@@ -172,7 +139,7 @@ export default function Home() {
                 </div>
               </>
             )}
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

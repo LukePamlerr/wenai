@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { ExternalLink, Users, Star, Loader2 } from 'lucide-react';
 import GlossyButton from '../components/GlossyButton';
 import { useState, useEffect } from 'react';
@@ -39,16 +38,12 @@ export default function Games() {
   return (
     <div className="pt-32 pb-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-16"
-        >
-          <h1 className="text-5xl md:text-6xl font-bold text-brand-grey-dark mb-6">Our Portfolio</h1>
+        <div className="mb-16">
+          <h1 className="text-5xl md:text-6xl font-bold text-brand-white mb-6">Our Portfolio</h1>
           <p className="text-xl text-brand-grey max-w-2xl">
             Explore the experiences we've developed. Featuring real-time data from our latest hits.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {loading ? (
@@ -57,15 +52,12 @@ export default function Games() {
               <p className="text-brand-grey font-medium">Fetching live data...</p>
             </div>
           ) : games.map((game, index) => (
-            <motion.div
+            <div
               key={game.placeId}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="group bg-brand-grey-light rounded-[2rem] border-2 border-brand-grey-dark/10 overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 relative flex flex-col"
+              className="group bg-brand-grey-light rounded-[2rem] border-2 border-brand-white/10 overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 relative flex flex-col"
             >
               <div className="absolute top-4 left-4 z-20">
-                <div className="px-3 py-1 rounded-full bg-brand-grey-dark text-brand-white text-[10px] font-bold uppercase tracking-widest shadow-lg">
+                <div className="px-3 py-1 rounded-full bg-brand-white text-brand-black text-[10px] font-bold uppercase tracking-widest shadow-lg">
                   Live Now
                 </div>
               </div>
@@ -77,11 +69,11 @@ export default function Games() {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-4 right-4 flex gap-2">
-                  <div className="px-3 py-1 rounded-full bg-black/90 backdrop-blur-md text-xs font-bold text-brand-grey-dark flex items-center gap-1 shadow-sm">
+                  <div className="px-3 py-1 rounded-full bg-black/90 backdrop-blur-md text-xs font-bold text-brand-white flex items-center gap-1 shadow-sm">
                     <Users size={12} />
                     {game.playing.toLocaleString()}
                   </div>
-                  <div className="px-3 py-1 rounded-full bg-black/90 backdrop-blur-md text-xs font-bold text-brand-grey-dark flex items-center gap-1 shadow-sm">
+                  <div className="px-3 py-1 rounded-full bg-black/90 backdrop-blur-md text-xs font-bold text-brand-white flex items-center gap-1 shadow-sm">
                     <Star size={12} className="text-yellow-500 fill-yellow-500" />
                     {game.rating || '4.8'}
                   </div>
@@ -92,7 +84,7 @@ export default function Games() {
                 <span className="text-xs font-bold uppercase tracking-widest text-brand-grey mb-2 block">
                   Roblox / Experience
                 </span>
-                <h3 className="text-2xl font-bold text-brand-grey-dark mb-4">{game.name}</h3>
+                <h3 className="text-2xl font-bold text-brand-white mb-4">{game.name}</h3>
                 <p className="text-brand-grey text-sm leading-relaxed mb-6 flex-1">
                   {game.description ? (game.description.length > 150 ? game.description.substring(0, 150) + '...' : game.description) : "An immersive experience built with Overtime's signature high-fidelity standards."}
                 </p>
@@ -105,7 +97,7 @@ export default function Games() {
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

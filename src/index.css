@@ -2,15 +2,15 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --color-brand-white: #000000;
-  --color-brand-grey-light: #121212;
+  --color-brand-black: #000000;
+  --color-brand-white: #ffffff;
   --color-brand-grey: #a1a1a6;
-  --color-brand-grey-dark: #ffffff;
+  --color-brand-grey-light: #121212;
 }
 
 @layer base {
   body {
-    @apply bg-brand-white text-brand-grey-dark antialiased selection:bg-brand-grey/20;
+    @apply bg-brand-black text-brand-white antialiased selection:bg-brand-grey/20;
   }
 }
 

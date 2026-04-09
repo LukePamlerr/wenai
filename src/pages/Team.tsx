@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { Mail, Loader2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -83,16 +82,12 @@ export default function Team() {
   return (
     <div className="pt-32 pb-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-24 text-center"
-        >
-          <h1 className="text-5xl md:text-6xl font-bold text-brand-grey-dark mb-6">The Minds Behind Overtime</h1>
+        <div className="mb-24 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-brand-white mb-6">The Minds Behind Overtime</h1>
           <p className="text-xl text-brand-grey max-w-2xl mx-auto">
             We are an elite collective of artists, scripters, and designers united by a passion for creating the best experiences on Roblox.
           </p>
-        </motion.div>
+        </div>
 
         {loading ? (
           <div className="flex flex-col items-center justify-center py-24">
@@ -106,12 +101,8 @@ export default function Team() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-32">
             {teamData.map((member, index) => (
-              <motion.div
+              <div
                 key={member.username}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="group"
               >
                 <div className="relative mb-8">
@@ -128,37 +119,27 @@ export default function Team() {
                 </div>
                 
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-brand-grey-dark mb-1">{member.username}</h3>
+                  <h3 className="text-2xl font-bold text-brand-white mb-1">{member.username}</h3>
                   <p className="text-brand-grey font-medium mb-2 italic">"{member.nickname}"</p>
                   <p className="text-sm font-bold uppercase tracking-widest text-brand-grey mb-4">{member.role}</p>
                   <p className="text-brand-grey leading-relaxed max-w-xs mx-auto">
                     {member.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="p-12 rounded-[3rem] bg-brand-grey-light/50 border border-brand-grey/10"
-          >
-            <h3 className="text-3xl font-bold text-brand-grey-dark mb-6">Our Philosophy</h3>
+          <div className="p-12 rounded-[3rem] bg-brand-grey-light/50 border border-brand-grey/10">
+            <h3 className="text-3xl font-bold text-brand-white mb-6">Our Philosophy</h3>
             <p className="text-brand-grey leading-relaxed text-lg">
               At Overtime, we don't just build games; we craft digital worlds. Our team focuses on pushing the technical boundaries of the Roblox engine, from custom lighting systems to complex backend architectures. Every project is a testament to our commitment to quality, performance, and player immersion.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="p-12 rounded-[3rem] bg-brand-grey-dark text-brand-white"
-          >
+          <div className="p-12 rounded-[3rem] bg-brand-white text-brand-black">
             <h3 className="text-3xl font-bold mb-6">Expertise</h3>
             <ul className="space-y-4 text-brand-white/80 text-lg">
               <li className="flex items-center gap-3">
@@ -178,32 +159,23 @@ export default function Team() {
                 Custom UI/UX Frameworks
               </li>
             </ul>
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div 
-          whileInView={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-          viewport={{ once: true }}
-          className="p-12 rounded-[3rem] bg-brand-grey-light border border-brand-grey/10 text-center relative overflow-hidden shadow-2xl"
-        >
+        <div className="p-12 rounded-[3rem] bg-brand-grey-light border border-brand-grey/10 text-center relative overflow-hidden shadow-2xl">
           <div className="relative z-10">
-            <h2 className="text-4xl font-bold text-brand-grey-dark mb-6">Want to join the collective?</h2>
+            <h2 className="text-4xl font-bold text-brand-white mb-6">Want to join the collective?</h2>
             <p className="text-brand-grey mb-10 max-w-xl mx-auto">
               We're always looking for the top 1% of Roblox talent. If you're a master of your craft and want to work on industry-leading projects, we want to hear from you.
             </p>
             <Link to="/apply">
-              <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 rounded-full bg-brand-grey-dark text-brand-white font-bold flex items-center gap-2 mx-auto hover:bg-white transition-colors"
-              >
+              <button className="px-8 py-3 rounded-full bg-brand-white text-brand-black font-bold flex items-center gap-2 mx-auto hover:bg-brand-grey transition-colors">
                 <Mail size={18} />
                 Apply Now
-              </motion.button>
+              </button>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

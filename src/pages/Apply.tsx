@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { Send, Code, Layout, Sparkles, User, Link as LinkIcon } from 'lucide-react';
 import GlossyButton from '../components/GlossyButton';
 import { useState, FormEvent } from 'react';
@@ -17,36 +16,23 @@ export default function Apply() {
   return (
     <div className="pt-32 pb-24 px-6">
       <div className="max-w-4xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-16 text-center"
-        >
-          <h1 className="text-5xl md:text-6xl font-bold text-brand-grey-dark mb-6">Join the Collective</h1>
+        <div className="mb-16 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-brand-white mb-6">Join the Collective</h1>
           <p className="text-xl text-brand-grey max-w-2xl mx-auto">
             We're looking for the top 1% of Roblox talent. Show us what you've built and let's create the future of play together.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="p-8 md:p-12 rounded-[3rem] bg-brand-grey-light border border-brand-grey/10 shadow-2xl relative overflow-hidden"
-        >
+        <div className="p-8 md:p-12 rounded-[3rem] bg-brand-grey-light border border-brand-grey/10 shadow-2xl relative overflow-hidden">
           {formState === 'sent' ? (
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="h-full flex flex-col items-center justify-center text-center py-24"
-            >
+            <div className="h-full flex flex-col items-center justify-center text-center py-24">
               <div className="w-20 h-20 rounded-full bg-green-900/30 text-green-400 flex items-center justify-center mb-8">
                 <Send size={32} />
               </div>
-              <h3 className="text-3xl font-bold text-brand-grey-dark mb-4">Application Received!</h3>
+              <h3 className="text-3xl font-bold text-brand-white mb-4">Application Received!</h3>
               <p className="text-brand-grey mb-8">Our team will review your portfolio and get in touch if there's a match.</p>
               <GlossyButton onClick={() => setFormState('idle')}>Submit Another Application</GlossyButton>
-            </motion.div>
+            </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -58,7 +44,7 @@ export default function Apply() {
                     required
                     type="text" 
                     placeholder="John Doe" 
-                    className="w-full px-6 py-4 rounded-2xl bg-brand-white border border-brand-grey/20 focus:border-brand-grey-dark/40 focus:bg-brand-grey-light transition-all outline-none"
+                    className="w-full px-6 py-4 rounded-2xl bg-brand-black border border-brand-grey/20 focus:border-brand-white/40 focus:bg-brand-grey-light transition-all outline-none"
                   />
                 </div>
                 <div className="space-y-2">
@@ -69,7 +55,7 @@ export default function Apply() {
                     required
                     type="text" 
                     placeholder="RobloxPlayer123" 
-                    className="w-full px-6 py-4 rounded-2xl bg-brand-white border border-brand-grey/20 focus:border-brand-grey-dark/40 focus:bg-brand-grey-light transition-all outline-none"
+                    className="w-full px-6 py-4 rounded-2xl bg-brand-black border border-brand-grey/20 focus:border-brand-white/40 focus:bg-brand-grey-light transition-all outline-none"
                   />
                 </div>
               </div>
@@ -81,7 +67,7 @@ export default function Apply() {
                     required
                     type="email" 
                     placeholder="john@example.com" 
-                    className="w-full px-6 py-4 rounded-2xl bg-brand-white border border-brand-grey/20 focus:border-brand-grey-dark/40 focus:bg-brand-grey-light transition-all outline-none"
+                    className="w-full px-6 py-4 rounded-2xl bg-brand-black border border-brand-grey/20 focus:border-brand-white/40 focus:bg-brand-grey-light transition-all outline-none"
                   />
                 </div>
                 <div className="space-y-2">
@@ -91,7 +77,7 @@ export default function Apply() {
                   <select 
                     required
                     defaultValue=""
-                    className="w-full px-6 py-4 rounded-2xl bg-brand-white border border-brand-grey/20 focus:border-brand-grey-dark/40 focus:bg-brand-grey-light transition-all outline-none appearance-none cursor-pointer"
+                    className="w-full px-6 py-4 rounded-2xl bg-brand-black border border-brand-grey/20 focus:border-brand-white/40 focus:bg-brand-grey-light transition-all outline-none appearance-none cursor-pointer"
                   >
                     <option value="" disabled>Select specialization</option>
                     <option value="scripting">Advanced Scripting</option>
@@ -112,7 +98,7 @@ export default function Apply() {
                   required
                   type="url" 
                   placeholder="https://roblox.com/users/..." 
-                  className="w-full px-6 py-4 rounded-2xl bg-brand-white border border-brand-grey/20 focus:border-brand-grey-dark/40 focus:bg-brand-grey-light transition-all outline-none"
+                  className="w-full px-6 py-4 rounded-2xl bg-brand-black border border-brand-grey/20 focus:border-brand-white/40 focus:bg-brand-grey-light transition-all outline-none"
                 />
               </div>
 
@@ -124,7 +110,7 @@ export default function Apply() {
                   required
                   rows={4}
                   placeholder="Tell us about your experience and what you can bring to the team..." 
-                  className="w-full px-6 py-4 rounded-2xl bg-brand-white border border-brand-grey/20 focus:border-brand-grey-dark/40 focus:bg-brand-grey-light transition-all outline-none resize-none"
+                  className="w-full px-6 py-4 rounded-2xl bg-brand-black border border-brand-grey/20 focus:border-brand-white/40 focus:bg-brand-grey-light transition-all outline-none resize-none"
                 />
               </div>
 
@@ -139,7 +125,7 @@ export default function Apply() {
           )}
           
           <div className="absolute top-0 right-0 w-64 h-64 bg-brand-grey-light/50 rounded-full blur-[100px] -z-0 pointer-events-none" />
-        </motion.div>
+        </div>
       </div>
     </div>
   );
